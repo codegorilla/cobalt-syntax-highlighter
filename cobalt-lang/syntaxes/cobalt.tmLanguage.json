@@ -1,0 +1,96 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Cobalt",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#constants"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#variables"
+		}
+	],
+	"repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.block.cobalt",
+                    "begin": "\/[*]",
+                    "end": "[*](\/)"
+                },
+                {
+                    "name": "comment.line.double-slash.cobalt",
+                    "begin": "\/\/",
+                    "end": "\n"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.language.cobalt",
+				    "match": "\\b(true|false|nil|null)\\b"
+                }
+            ]
+        },
+		"keywords": {
+			"patterns": [
+                {
+				    "name": "keyword.control.cobalt",
+				    "match": "\\b(break|case|catch|continue|do|else|for|foreach|goto|if|in|return|switch|throw|try|when|while|yield)\\b"
+			    },
+                {
+				    "name": "keyword.operator.cobalt",
+				    "match": "\\b(and|delete|new|not|or)\\b"
+			    },
+                {
+				    "name": "keyword.other.cobalt",
+				    "match": "\\b(class|def|default|enum|extends|fun|import|is|lambda|let|module|my|namespace|our|struct|template|typedef|union|using|val|var)\\b"
+			    }
+            ]
+		},
+		"storage": {
+			"patterns": [
+                {
+				    "name": "storage.modifier.cobalt",
+				    "match": "\\b(abstract|const|export|inline|private|protected|public|static|virtual|volatile)\\b"
+			    },
+                {
+				    "name": "storage.type.cobalt",
+				    "match": "\\b(bool|char|byte|short|int|long|ubyte|ushort|uint|ulong|int8|int16|int32|int64|uint8|uint16|uint32|uint64|float|double|float32|float64|void)\\b"
+			    }
+            ]
+		},
+		"strings": {
+			"name": "string.quoted.double.cobalt",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.cobalt",
+					"match": "\\\\."
+				}
+			]
+		},
+        "variables": {
+            "patterns": [
+                {
+                    "name": "variable.language.cobalt",
+				    "match": "\\b(this)\\b"
+                }
+            ]
+        }
+	},
+	"scopeName": "source.cobalt"
+}
